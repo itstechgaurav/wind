@@ -1,0 +1,9 @@
+//@for $i from 0 througn 10 {
+//}
+
+@include pmn(p, padding); // For Normal
+@include pm(xl, p, padding); // For xl
+@include pm(lg, p, padding); // For lg
+@include pm(md, p, padding); // For md
+@include pm(sm, p, padding); // For sm
+@include pm(xs, p, padding); // For xs

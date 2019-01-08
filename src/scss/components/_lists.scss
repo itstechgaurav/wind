@@ -1,0 +1,19 @@
+.list {
+    display: inline-block;
+    list-style: none;
+    font-size: 1.4rem;
+    background-color: #fff;
+    border-radius: .3rem;
+    overflow: hidden;
+    border: .06rem solid #eaeaea;
+    
+    &-item {
+        padding: .8rem 1.2rem;
+        
+        &:not(:last-child) {
+            border-bottom: .06rem solid #eaeaea;
+        }
+        
+    }
+    
+}

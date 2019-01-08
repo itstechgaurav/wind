@@ -1,0 +1,75 @@
+.tabs {
+    &-container {
+        width: 100%;
+        background-color: #fff;
+        margin-bottom: 1rem;
+        overflow-x: hidden;
+    }
+    
+    &-head {
+        display: flex;
+        width: 100%;
+        box-shadow: 0 0px 8px rgba($color-black, .08);
+    }
+}
+
+.tab {
+    &-head {
+        display: inline-block;
+        padding: 1.5rem 1rem;
+        cursor: pointer;
+        font-weight: 200;
+        
+        &:hover {
+            background-color: rgba($color-white-dark, .4);
+        }
+    }
+    
+    &-active {
+        background-color: rgba($color-white-dark, .4) !important;
+    }
+    
+    &-body {
+        padding: 1rem;
+        background-color: rgba($color-white-dark, .4);
+        display: none;
+    }
+    
+}
+
+.row-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    
+    & > .col {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}
+
+.tabs-vertical {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    background-color: rgba($color-white-dark, .4);
+    
+    & > .tabs-head {
+        display: inline-flex;
+        float: left;
+        flex-direction: column;
+        width: auto;
+        background-color: #fff;
+    }
+    
+    & > .tabs-body {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+}

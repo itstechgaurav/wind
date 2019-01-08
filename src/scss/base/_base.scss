@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Varela Round", sans-serif !important;
+    background-color: #edf3ff;
+    overflow: hidden;
+    overflow-y: auto;
+    color: #666;
+    font-size: 1.6rem;
+}
+
+
+@import "./flex";
+@import "./common";

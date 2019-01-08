@@ -1,0 +1,123 @@
+
+
+.c {
+    &::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+}
+
+
+
+.float {
+    &-left {
+        float: left !important;
+    }
+    
+    &-right {
+        float: right !important;
+    }
+    
+    &-none {
+        float: none !important;
+    }
+}
+
+
+.d-none {
+    display: none !important;
+}
+
+.d-b {
+    display: block !important;
+}
+
+.d-ib {
+    display: inline-block !important;
+}
+
+.d-f {
+    display: flex !important;
+}
+
+.pos-fixed {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+}
+
+.pos-ab {
+    position: absolute !important;
+}
+
+.pos-rel {
+    position: relative !important;
+}
+
+.focus-off {
+    outline: none !important;
+}
+
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.ovr-x {
+    overflow-x: hidden !important;
+}
+
+.ovr-y {
+    overflow-y: hidden !important;
+}
+
+.over {
+    overflow: hidden !important;
+}
+
+
+.rad-s {
+    border-radius: .3rem !important;
+}
+
+.rad-m {
+    border-radius: 1rem !important;
+}
+
+.rad-l {
+    border-radius: 2rem !important;
+}
+
+.rad-circle {
+    border-radius: 50% !important;
+}
+
+.rad-none {
+    border-radius: none !important;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+[data-target] {
+    cursor: pointer !important;
+}
+
+
+.mute {
+    opacity: .6;
+}

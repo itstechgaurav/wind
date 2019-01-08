@@ -1,0 +1,58 @@
+@mixin alerts($name, $color) {
+    &-#{$name} {
+        background-color: rgba($color, .82) !important;
+        border-color: rgba($color, .82) !important;
+        @if($name == white or $name == white-dark) {
+            color: $color-dark !important;
+        } @else {
+            color: $color-white !important;
+        }
+        
+    }
+}
+
+
+.alert {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: $color-white;
+    color: $color-dark;
+    border-radius: .3rem;
+    position: relative;
+    
+    @include alerts(prime, $color-prime);
+    @include alerts(sec, $color-sec);
+    @include alerts(ter, $color-ter);
+    @include alerts(warn, $color-warn);
+    @include alerts(danger, $color-danger);
+    @include alerts(dark, $color-dark);
+    @include alerts(black, $color-black);
+    @include alerts(white, $color-white);
+    @include alerts(white-dark, $color-white-dark);
+    
+    &-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: inherit;
+        color: inherit;
+        padding: .5rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+        cursor: pointer;
+        
+        &::after {
+            content: "\f129";
+            font-family: "Ionicons";
+        }
+    }
+    
+    &-body {
+        width: calc(100% - 35px);
+        padding: 1.2rem 1rem;
+    }
+    
+}

@@ -1,0 +1,31 @@
+.copy-btn {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    display: inline-block;
+    background-color: $color-dark;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+    color: $color-white;
+    padding: .5rem .8rem;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+}
+
+.code-window {
+    position: relative;
+    background-color: $color-white;
+	box-shadow: 0 6px 10px rgba(#000, .05);
+    max-height: 40rem;
+    
+    & > pre {
+        width: 100%;
+        height: 100%;
+    }
+    
+    & * {
+        font-size: 1.3rem;
+    }
+    
+}

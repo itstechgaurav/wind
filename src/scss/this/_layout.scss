@@ -1,0 +1,90 @@
+body {
+    color: $color-dark;
+    background-color: $color-white-dark;
+    
+}
+
+
+#c-nav {
+    width: 100%;
+    height: 6rem;
+    background-color: $color-dark-2;
+}
+
+#toggle-container {
+    padding: .5em .8em;
+    height: 100%;
+    background-color: $color-prime;
+    color: #fff;
+    float: left;
+    font-size: 2.9rem;
+    cursor: pointer;
+}
+
+.logo {
+    display: inline-flex;
+    height: 100%;
+    padding: .5rem 1rem;
+    color: $color-white;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.c-container {
+    width: 100%;
+    position: relative;
+    height: calc(100vh - 6rem);
+    overflow: hidden;
+
+    & > * {
+        transition: .3s;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    &-part--a {
+        left: -300px;
+        height: 100%;
+        width: 300px;
+    }
+
+    &-part--b {
+        right: 0;
+        height: 100%;
+        width: 100%;
+        //        calc(100% - 300px)
+    }
+
+    &--open {
+        & > .c-container-part--a {
+            left: 0 !important;
+        }
+
+        & > .c-container-part--b {
+            right: -300px;
+        }
+    }
+
+}
+
+
+@media (max-width: 1000px) {
+
+    .c-container {
+
+        &--open {
+
+            & > .c-container-part--b {
+                right: -300px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+

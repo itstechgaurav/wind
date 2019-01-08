@@ -1,0 +1,58 @@
+.panel {
+    
+    width: 100%;
+    position: relative;
+    
+    &-open[data-usePanel="left"] > &-left {
+        transform: translateX(-100%);
+    }
+    
+    &-open[data-usePanel="left"] > &-right {
+        width: 100% !important;
+    }
+    
+    &-open[data-usePanel="right"] > &-left {
+        width: 100%;
+    }
+    
+    &-open[data-usePanel="right"] > &-right {
+        transform: translateX(100%);
+    }
+    
+    
+    &-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        overflow: auto;
+        transition: .3s;
+        
+    }
+    
+    &-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        overflow: auto;
+        transition: .3s;
+    }
+    
+    &-left-c {
+       width: 300px; 
+    }
+    
+    &-right-c {
+        width: calc(100% - 300px);
+    }
+    
+    &-left-a {
+        width: calc(100% - 300px);
+    }
+    
+    &-right-a {
+        width: 300px; 
+    }
+    
+}

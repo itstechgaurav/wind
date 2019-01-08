@@ -1,0 +1,108 @@
+@mixin link($name, $color) {
+    &-#{$name} {
+        &::after {
+            background-color: #{$color};
+        }
+    }
+}
+
+
+
+@mixin textSize($name, $size) {
+    .ts-#{$name} {
+        font-size: #{$size} !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    @if($i not 1 and $i not 5) {
+        @include textSize($i, (0.1 * $i) + 1rem)
+    }
+}
+
+.heading-sec {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    margin-bottom: 1.5rem;
+    color: $color-dark;
+    
+    
+}
+
+.heading-ter {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color: $color-dark;
+}
+
+.text-upr {
+    text-transform: uppercase;
+}
+
+.text-lwr {
+    text-transform: lowercase;
+}
+
+.text-cap {
+    text-transform: capitalize;
+}
+
+.link {
+    display: inline-block;
+    padding-bottom: .3rem;
+    position: relative;
+    text-decoration: none;
+    color: gray;
+    
+    &-active::after {
+        width: 100% !important;
+        opacity: 1 !important;
+    }
+    
+    &:hover::after {
+        width: 100%;
+        opacity: 1;
+    }
+    
+    &::after {
+        position: absolute;
+        width: 10%;
+        height: 2px;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        content: '';
+        background-color: dodgerblue;
+        transition: .3s;
+        margin-top: .2rem;
+        opacity: 0;
+    }
+    
+    @include link(prime, $color-prime);
+    @include link(sec, $color-sec);
+    @include link(ter, $color-ter);
+    @include link(warn, $color-warn);
+    @include link(danger, $color-danger);
+    @include link(dark, $color-dark);
+    @include link(white, $color-white);
+    @include link(white-dark, $color-white-dark);
+    @include link(black, $color-black);
+    
+    &-left::after {
+        width: 0%;
+        transform: none;
+        left: 0;
+    }
+        
+    &-right::after {
+        width: 0%;
+        transform: none;
+        left: initial;
+        right: 0;
+    }
+    
+}

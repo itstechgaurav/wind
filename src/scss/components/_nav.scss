@@ -1,0 +1,227 @@
+@mixin navTheme($name, $color) {
+    &-#{$name} {
+        @if ($name == white or $name == white-dark) {
+            color: $color-dark;
+        } @else {
+           color: $color-white; 
+        }
+        background-color: #{$color};
+    }
+}
+
+@mixin navItemCenter($name) {
+    @include qm($name) {
+        &-item-center-#{$name} &-item {
+            text-align: center !important;
+        }
+    }
+}
+
+.nav {
+    background-color: $color-white;
+    display: flex;
+    color: $color-dark;
+    font-size: 1.4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    padding: 1rem .7rem;
+    
+    &-img {
+        width: 43px;
+        height: 43px;
+        margin-right: 1rem;
+    }
+    
+    &-corner {
+        justify-content: space-between;
+    }
+    
+    @include navTheme(prime,$color-prime);
+    @include navTheme(sec,$color-sec);
+    @include navTheme(ter,$color-ter);
+    @include navTheme(warn,$color-warn);
+    @include navTheme(danger,$color-danger);
+    @include navTheme(dark,$color-dark);
+    @include navTheme(white,$color-white);
+    @include navTheme(white-dark,$color-white-dark);
+    @include navTheme(black,$color-black);
+    
+    
+    &-logo {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: .3rem;
+        text-transform: uppercase;
+        margin: 0 5rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    &  * {
+        color: inherit;
+        background-color: inherit;
+    }
+    
+    &  input {
+        color: inherit !important;
+    }
+    
+    &-item {
+        padding: 1rem 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        display: inline-block;
+    }
+    
+    @include navItemCenter(xl);
+    @include navItemCenter(lg);
+    @include navItemCenter(md);
+    @include navItemCenter(sm);
+    @include navItemCenter(xs);
+    
+    &-opener {
+        display: none;
+        
+    }
+    
+    &-body {
+        position: relative;
+        transform-origin: top;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+}
+
+@mixin responsive() {
+    
+    justify-content: space-between;
+    
+    .nav-opener {
+        display: block;
+    }
+    
+    .nav-item {
+        display: block;
+    }
+
+    .nav-body {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: 100%;
+        background-color: inherit;
+        transform: scaleY(0);
+        transition: .3s linear;
+        display: block;
+        
+        & > * {
+            opacity: 0;
+            transition: opacity .1s ease-in-out;
+        }
+        
+    }
+    
+    &.nav-show > .nav-body {
+        transform: scaleY(1);
+        
+        & > * {
+            opacity: 1;
+            transition: opacity .3s ease-in-out .3s;
+        }
+        
+    }
+}
+
+.nav-hide-lr {
+    @include qm(lr) {
+        @include responsive();
+    }
+}
+
+.nav-hide-md {
+    @include qm(md) {
+        @include responsive();
+    }
+}
+
+.nav-hide-sm {
+    @include qm(sm) {
+        @include responsive();
+    }
+}
+
+.nav-hide-xs {
+    @include qm(xs) {
+        @include responsive();
+    }
+}
+
+.nav-hide-xl {
+    @include qm(xl) {
+        @include responsive();
+    }
+}
+
+
+
+// hamburger
+
+.hamburger {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hamburger-bar {
+    width: 100%;
+    height: 2px;
+    color: currentColor;
+    background-color: currentColor;
+    position: relative;
+    transition: background-color .3s ease-in-out .1s;
+    
+    &::after,
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: currentColor;
+        transition: transform .3s ease-in-out, margin .3s ease-in-out .3s;
+        left: 0;
+        top: 0;
+    }
+
+    &::before {
+        margin-top: -1rem;
+    }
+
+    &::after {
+        margin-top: 1rem;
+    }
+    
+}
+
+.hamburger-close .hamburger-bar {
+    background-color: transparent;
+}
+
+.hamburger-close .hamburger-bar::before {
+    transition: transform .3s ease-in-out .3s, margin .3s ease-in-out;
+    margin: 0 !important;
+    transform: rotate(40deg);
+}
+
+.hamburger-close .hamburger-bar::after {
+    transition: transform .3s ease-in-out .3s, margin .3s ease-in-out;
+    margin: 0 !important;
+    transform: rotate(-40deg);
+}

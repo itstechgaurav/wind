@@ -1,0 +1,116 @@
+@mixin rippleAnm($name, $color) {
+    &-#{$name} {
+        background-color: rgba($color, .85) !important;
+    }
+}
+
+@mixin btn($name, $color) {
+    &-#{$name} {
+        background-color: #{$color} !important;
+        border: 2px solid #{$color} !important;
+
+        @if ($name == white or $name == white-dark) {
+            color: $color-dark !important;
+        }
+
+        &-o {
+            @if ($name == white or $name == white-dark) {
+                background-color: transparent !important;
+            }
+
+            @else {
+                background-color: $color-white !important;
+            }
+
+            color: #{$color} !important;
+            border: 2px solid currentColor !important;
+        }
+    }
+}
+
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    padding: .8rem 1.6rem;
+    font-size: 1.8rem;
+    border: none;
+    outline: none;
+    color: $color-white;
+    border-radius: .3rem;
+    box-shadow: 0 .6rem 1rem rgba($color-black, .1);
+    transition: .2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    text-align: center;
+    user-select: none;
+    justify-content: center;
+    align-items: center;
+
+    &-simple {
+        transform: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+
+    &-s {
+        font-size: 1.4rem;
+        padding: .6rem 1rem;
+    }
+
+    & .icon-left {
+        margin-right: 1rem;
+        transition: .3s;
+    }
+
+    & .icon-right {
+        margin-left: 1rem;
+        transition: .3s;
+    }
+
+    &:active {
+        box-shadow: 0 .2rem 1rem rgba($color-black, .1);
+        transform: translateY(.2rem);
+    }
+
+
+    @include btn(prime, $color-prime);
+    @include btn(sec, $color-sec);
+    @include btn(ter, $color-ter);
+    @include btn(warn, $color-warn);
+    @include btn(danger, $color-danger);
+    @include btn(dark, $color-dark);
+    @include btn(white, $color-white);
+    @include btn(white-dark, $color-white-dark);
+    @include btn(transparent, transparent);
+
+}
+
+
+
+
+
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-anm {
+    border-radius: 50% !important;
+    position: absolute;
+    transform: scale(0);
+    background-color: rgba($color-white, .85) !important;
+    animation: ripple-anm 1.4s linear forwards;
+
+    @include rippleAnm(prime, $color-prime);
+    @include rippleAnm(sec, $color-sec);
+    @include rippleAnm(ter, $color-ter);
+    @include rippleAnm(warn, $color-warn);
+    @include rippleAnm(danger, $color-danger);
+    @include rippleAnm(dark, $color-dark);
+    @include rippleAnm(white, $color-white);
+    @include rippleAnm(white-dark, $color-white-dark);
+
+}

@@ -1,0 +1,46 @@
+
+@for $i from 1 through 10 {
+    .w-#{$i} {
+         width: #{$i * 10}% !important;
+    }
+    
+    // Extra small devices
+    
+    @include qm(xs) {
+        .w-#{$i}-xs {
+            width: #{$i * 10}% !important;
+        }
+    }
+    
+    // Small devices
+    
+    @include qm(sm) {
+        .w-#{$i}-sm {
+            width: #{$i * 10}% !important;
+        }
+    }
+    
+    // Medium devices
+    
+    @include qm(md) {
+        .w-#{$i}-md {
+            width: #{$i * 10}% !important;
+        }
+    }
+    
+    // large devices
+    
+    @include qm(lr) {
+        .w-#{$i}-lr {
+            width: #{$i * 10}% !important;
+        }
+    }
+    
+    // Extra Large devices
+    
+    @include qm(xl) {
+        .w-#{$i}-xl {
+            width: #{$i * 10}% !important;
+        }
+    }
+}

@@ -1,0 +1,245 @@
+.form-group {
+    display: block;
+    margin: 2rem 0;
+}
+
+.row-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    
+    & > .col {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}
+
+@mixin input($name, $color) {
+    &-#{$name} {
+        &:hover,
+        &:focus,
+        &:active:focus {
+            color: $color;
+        }
+    }
+}
+
+.input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    font-size: 1.5rem;
+    padding: .8rem;
+
+    &::placeholder {
+        transform: translateY(0px);
+        transition: .5s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active:focus {
+        color: inherit;
+        outline: none;
+        border-bottom: 1px solid currentColor;
+
+        &::placeholder {
+            font-size: 1.3rem;
+            color: inherit;
+            position: relative;
+            transform: translateY(-15px);
+
+        }
+    }
+    
+    &:focus ~ .anm-line::after {
+        width: 100%;
+    }
+    
+    @include input(prime, $color-prime);
+    @include input(sec, $color-sec);
+    @include input(ter, $color-ter);
+    @include input(warn, $color-warn);
+    @include input(danger, $color-danger);
+    @include input(dark, $color-dark);
+    @include input(black, $color-black);
+    @include input(white, $color-white);
+}
+
+
+.anm-line-resets {
+    border: none !important;
+}
+
+@mixin anmLine($name, $color) {
+    &-#{$name} {
+        &::after {
+            background-color: #{$color} !important;
+        }
+    }
+}
+
+.anm-line {
+    width: 100%;
+    height: 2px;
+    position: relative;
+//    background-color: #d8d8d8 !important;
+    
+    &::after {
+        position: absolute;
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        content: '';
+        background-color: $color-prime;
+        transition: .3s;
+        transform: translateX(-50%);
+    }
+    
+    &-left::after {
+        left: 0;
+        transform: none;
+    }
+    
+    &-right::after {
+        left: unset;
+        right: 0;
+        transform: none;
+    }
+    
+    @include anmLine(prime, $color-prime);
+    @include anmLine(sec, $color-sec);
+    @include anmLine(ter, $color-ter);
+    @include anmLine(warn, $color-warn);
+    @include anmLine(danger, $color-danger);
+    @include anmLine(dark, $color-dark);
+    @include anmLine(black, $color-black);
+    @include anmLine(white, $color-white);
+    @include anmLine(white-dark, $color-white-dark);
+}
+
+
+
+// checkbox
+
+
+.checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    width: 2rem;
+    height: 2rem;
+    color: $color-prime;
+    background-color: transparent !important;
+    border: .2rem solid;
+    border-radius: .3rem;
+    position: relative;
+//    outline: none;
+    margin-right: 1rem !important;
+    transition: .3s;
+    
+    &:focus {
+        outline: 1px solid currentColor;
+        outline-offset: 1px;
+    }
+    
+    &:checked {
+        
+        background-color: currentColor !important;
+        
+        &::after {
+            opacity: 1;
+            transform: scale(0.8);
+            color: #fff;
+        }
+        
+        & ~ span {
+            color: inherit;
+        }
+        
+    }
+    
+    &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        content: "\f121";
+        font-family: "Ionicons";
+        transform: scale(1.4);
+        transition: .3s;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    & span {
+        color: #ccc !important;
+    }
+    
+}
+
+.radiobox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    width: 2rem;
+    height: 2rem;
+    color: $color-prime;
+    background-color: transparent !important;
+    border: .2rem solid;
+    border-radius: 100%;
+    position: relative;
+    outline: none;
+    margin-right: 1rem !important;
+    
+    &:checked {
+        &::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+    }
+    
+    &::after {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        background-color: currentColor;
+        border-radius: 50%;
+        content: "";
+        transform: translate(-50%, -50%) scale(1.4);
+        transition: .3s;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+
+
+// labels
+
+
+.label {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #666;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .12rem;
+    margin-bottom: .7rem;
+}

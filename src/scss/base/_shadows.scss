@@ -1,0 +1,21 @@
+@mixin shadow($name, $color) {
+    &-#{$name} {
+        box-shadow: 0 1px 15px rgba($color, .3) !important;
+    }
+}
+
+.shadow {
+    &-none {
+        box-shadow: none !important;
+    }
+    @include shadow(prime, $color-prime);
+    @include shadow(sec, $color-sec);
+    @include shadow(ter, $color-ter);
+    @include shadow(warn, $color-warn);
+    @include shadow(danger, $color-danger);
+    @include shadow(dark, $color-dark);
+    @include shadow(white, $color-white);
+    @include shadow(white-dark, $color-white-dark);
+    @include shadow(black, $color-black);
+    
+}

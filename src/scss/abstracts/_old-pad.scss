@@ -1,0 +1,241 @@
+@for $i from 0 through 10 {
+    @include qm(xs) {
+        .p-#{$i}-xs {
+             padding: #{$i}rem !important;
+        }
+
+        .px-#{$i}-xs {
+             padding-left: #{$i}rem !important;
+             padding-right: #{$i}rem !important;
+        }
+
+        .py-#{$i}-xs {
+            padding-top: #{$i}rem !important;
+            padding-bottom: #{$i}rem !important;
+        }
+
+        .pl-#{$i}-xs {
+            padding-left: #{$i}rem !important;
+        }
+
+        .pr-#{$i}-xs {
+            padding-right: #{$i}rem !important;
+        }
+
+        .pt-#{$i}-xs {
+            padding-top: #{$i}rem !important;
+        }
+
+        .pb-#{$i}-xs {
+            padding-bottom: #{$i}rem !important;
+        }
+    }
+}
+
+
+
+
+@for $i from 0 through 10 {
+     .p-#{$i} {
+         padding: #{$i}rem !important;
+    }
+    
+    .px-#{$i} {
+         padding-left: #{$i}rem !important;
+         padding-right: #{$i}rem !important;
+    }
+    
+    .py-#{$i} {
+        padding-top: #{$i}rem !important;
+        padding-bottom: #{$i}rem !important;
+    }
+    
+    .pl-#{$i} {
+        padding-left: #{$i}rem !important;
+    }
+    
+    .pr-#{$i} {
+        padding-right: #{$i}rem !important;
+    }
+    
+    .pt-#{$i} {
+        padding-top: #{$i}rem !important;
+    }
+    
+    .pb-#{$i} {
+        padding-bottom: #{$i}rem !important;
+    }
+    
+    
+    
+    // Extra small devices
+    
+    @include qm(xs) {
+        .p-#{$i}-xs {
+             padding: #{$i}rem !important;
+        }
+
+        .px-#{$i}-xs {
+             padding-left: #{$i}rem !important;
+             padding-right: #{$i}rem !important;
+        }
+
+        .py-#{$i}-xs {
+            padding-top: #{$i}rem !important;
+            padding-bottom: #{$i}rem !important;
+        }
+
+        .pl-#{$i}-xs {
+            padding-left: #{$i}rem !important;
+        }
+
+        .pr-#{$i}-xs {
+            padding-right: #{$i}rem !important;
+        }
+
+        .pt-#{$i}-xs {
+            padding-top: #{$i}rem !important;
+        }
+
+        .pb-#{$i}-xs {
+            padding-bottom: #{$i}rem !important;
+        }
+    }
+    
+    // Small devices
+    
+    @include qm(sm) {
+        .p-#{$i}-sm {
+             padding: #{$i}rem !important;
+        }
+
+        .px-#{$i}-sm {
+             padding-left: #{$i}rem !important;
+             padding-right: #{$i}rem !important;
+        }
+
+        .py-#{$i}-sm {
+            padding-top: #{$i}rem !important;
+            padding-bottom: #{$i}rem !important;
+        }
+
+        .pl-#{$i}-sm {
+            padding-left: #{$i}rem !important;
+        }
+
+        .pr-#{$i}-sm {
+            padding-right: #{$i}rem !important;
+        }
+
+        .pt-#{$i}-sm {
+            padding-top: #{$i}rem !important;
+        }
+
+        .pb-#{$i}-sm {
+            padding-bottom: #{$i}rem !important;
+        }
+    }
+    
+    // Medium devices
+    
+    @include qm(md) {
+        .p-#{$i}-md {
+             padding: #{$i}rem !important;
+        }
+
+        .px-#{$i}-md {
+             padding-left: #{$i}rem !important;
+             padding-right: #{$i}rem !important;
+        }
+
+        .py-#{$i}-md {
+            padding-top: #{$i}rem !important;
+            padding-bottom: #{$i}rem !important;
+        }
+
+        .pl-#{$i}-md {
+            padding-left: #{$i}rem !important;
+        }
+
+        .pr-#{$i}-md {
+            padding-right: #{$i}rem !important;
+        }
+
+        .pt-#{$i}-md {
+            padding-top: #{$i}rem !important;
+        }
+
+        .pb-#{$i}-md {
+            padding-bottom: #{$i}rem !important;
+        }
+    }
+    
+    // large devices
+    
+    @include qm(lg) {
+        .p-#{$i}-lg {
+             padding: #{$i}rem !important;
+        }
+
+        .px-#{$i}-lg {
+             padding-left: #{$i}rem !important;
+             padding-right: #{$i}rem !important;
+        }
+
+        .py-#{$i}-lg {
+            padding-top: #{$i}rem !important;
+            padding-bottom: #{$i}rem !important;
+        }
+
+        .pl-#{$i}-lg {
+            padding-left: #{$i}rem !important;
+        }
+
+        .pr-#{$i}-lg {
+            padding-right: #{$i}rem !important;
+        }
+
+        .pt-#{$i}-lg {
+            padding-top: #{$i}rem !important;
+        }
+
+        .pb-#{$i}-lg {
+            padding-bottom: #{$i}rem !important;
+        }
+    }
+    
+    // Extra Large devices
+    
+    @include qm(xl) {
+        .p-#{$i}-xl {
+             padding: #{$i}rem !important;
+        }
+
+        .px-#{$i}-xl {
+             padding-left: #{$i}rem !important;
+             padding-right: #{$i}rem !important;
+        }
+
+        .py-#{$i}-xl {
+            padding-top: #{$i}rem !important;
+            padding-bottom: #{$i}rem !important;
+        }
+
+        .pl-#{$i}-xl {
+            padding-left: #{$i}rem !important;
+        }
+
+        .pr-#{$i}-xl {
+            padding-right: #{$i}rem !important;
+        }
+
+        .pt-#{$i}-xl {
+            padding-top: #{$i}rem !important;
+        }
+
+        .pb-#{$i}-xl {
+            padding-bottom: #{$i}rem !important;
+        }
+    }
+    
+}

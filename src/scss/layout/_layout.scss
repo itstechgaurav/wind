@@ -1,0 +1,98 @@
+.class {
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    
+    &-c {
+        flex-direction: column;
+    }
+    
+    &-cr {
+        flex-direction: column-reverse;
+    }
+    
+    &-rr {
+        flex-direction: row-reverse;
+    }
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.row > [class^='col-'] {
+    
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    
+}
+
+$from: 0;
+$to: 12;
+
+
+
+// grids
+
+
+
+@for $i from $from through $to {
+    .col-#{$i} {
+        flex-basis: calc(((100% / #{$to}) * #{$i}) - 1rem);
+    }
+}
+
+
+//   responsive grid
+
+@for $i from $from through $to {
+    @include qm(xl) {
+        .col-#{$i}-xl {
+            flex-basis: calc(((100% / #{$to}) * #{$i}) - 1rem);
+        }
+    }
+}
+
+
+@for $i from $from through $to {
+    @include qm(lg) {
+        .col-#{$i}-lg {
+            flex-basis: calc(((100% / #{$to}) * #{$i}) - 1rem);
+        }
+    }
+}
+
+
+@for $i from $from through $to {
+    @include qm(md) {
+        .col-#{$i}-md {
+            flex-basis: calc(((100% / #{$to}) * #{$i}) - 1rem);
+        }
+    }
+    
+}
+
+
+@for $i from $from through $to {
+    @include qm(sm) {
+        .col-#{$i}-sm {
+            flex-basis: calc(((100% / #{$to}) * #{$i}) - 1rem);
+        }
+    }
+}
+
+
+@for $i from $from through $to {
+    @include qm(xs) {
+        .col-#{$i}-xs {
+            flex-basis: calc(((100% / #{$to}) * #{$i}) - 1rem);
+        }
+    }
+}

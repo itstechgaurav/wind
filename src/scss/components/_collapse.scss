@@ -1,0 +1,68 @@
+.collapse {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem 0;
+    transition: .3s;
+    overflow: hidden;
+    border: 1px solid $color-dark;
+    border-radius: .3rem;
+    
+    &-default > &-head {
+        background-color: $color-dark;
+        color: $color-white;
+    }
+    
+    &-default > &-body {
+        background-color: $color-white-dark;
+        color: $color-dark;
+    }
+    
+    &-open > &-head::after {
+        transform: rotate(180deg);
+    }
+    
+    
+    &-head {
+        width: 100%;
+        padding: .8rem 2rem .8rem 1.2rem;
+        cursor: pointer;
+        transition: .3s;
+        position: relative;
+        
+        &::after {
+            color: inherit;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            content: "\f105";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            transition: .3s;
+            font-family: "Ionicons";
+            background-color: transparent;
+            border-radius: .3rem;
+        }
+        
+        
+    }
+    
+    &-body {
+        width: 100%;
+        transition: .4s;
+        padding: 0 !important;
+        overflow: hidden;
+        max-height: 0;
+    }
+    
+    &-content {
+        padding: .8rem 1.2rem;
+        opacity: 1;
+            
+    }
+}

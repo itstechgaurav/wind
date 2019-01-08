@@ -1,0 +1,45 @@
+@mixin bg($name, $color) {
+    &-#{$name} {
+        background-color: #{$color} !important;
+    }
+}
+
+@mixin color($name, $color) {
+    &-#{$name} {
+        color: #{$color} !important;
+    }
+}
+
+.bg {
+    
+    &::before,
+    &::after {
+        background-color: inherit !important;
+    }
+    
+    @include bg(prime, $color-prime);
+    @include bg(sec, $color-sec);
+    @include bg(ter, $color-ter);
+    @include bg(warn, $color-warn);
+    @include bg(danger, $color-danger);
+    @include bg(dark, $color-dark);
+    @include bg(white, $color-white);
+    @include bg(white-dark, $color-white-dark);
+    @include bg(black, $color-black);
+    @include bg(none, transparent);
+}
+
+// Fore colors
+
+.text {
+    @include color(prime, $color-prime);
+    @include color(sec, $color-sec);
+    @include color(ter, $color-ter);
+    @include color(warn, $color-warn);
+    @include color(danger, $color-danger);
+    @include color(dark, $color-dark);
+    @include color(white, $color-white);
+    @include color(white-dark, $color-white-dark);
+    @include color(black, $color-black);
+    @include color(none, transparent);
+}

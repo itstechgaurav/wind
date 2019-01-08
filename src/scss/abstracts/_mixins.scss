@@ -1,0 +1,152 @@
+// Media Queries Manager
+
+/*
+
+0      -  600px    Phone
+600px  -  900px    Tablet Portrait
+900px  -  1200px   Tablet Landscape
+1200px -  1800px   Normal Styles Goes Here
+1800px +           Big Desktop
+
+
+*/
+
+/*
+
+Breakpoints
+
+Small devices  - xs          -  480px   /  16px     - 30    em
+Mobiles        - sm          -  768px   /  16px     - 48    em
+Tablate P      - md          -  992px   /  16px     - 62    em
+Tablet  L      - l           -  1200px  /  16px     - 75    em
+Extra Large    - xl          -  1800px  /  16px     - 112.5 em
+
+*/
+
+
+$xs: 30em;
+$sm: 48em;
+$md: 62em;
+$lg: 75em;
+$xl: 112.5em;
+
+
+@mixin qm($breakpoint) {
+    @if $breakpoint==xs {
+        @media (max-width: $xs) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==sm {
+        @media (max-width: $sm) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==md {
+        @media (max-width: $md) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==lg {
+        @media (max-width: $lg) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==xl {
+        @media (min-width: $xl) {
+            @content
+        }
+
+        ;
+    }
+}
+
+
+
+
+
+//  padding or margin builder
+
+@mixin pmn($type, $prop) {
+    @for $i from 0 through 5 {
+        .#{$type}-#{$i} {
+            #{$prop}: #{$i}rem !important;
+        }
+
+        .#{$type}x-#{$i} {
+            #{$prop}-left: #{$i}rem !important;
+            #{$prop}-right: #{$i}rem !important;
+        }
+
+        .#{$type}y-#{$i} {
+            #{$prop}-top: #{$i}rem !important;
+            #{$prop}-bottom: #{$i}rem !important;
+        }
+
+        .#{$type}l-#{$i} {
+            #{$prop}-left: #{$i}rem !important;
+        }
+
+        .#{$type}r-#{$i} {
+            #{$prop}-right: #{$i}rem !important;
+        }
+
+        .#{$type}t-#{$i} {
+            #{$prop}-top: #{$i}rem !important;
+        }
+
+        .#{$type}b-#{$i} {
+            #{$prop}-bottom: #{$i}rem !important;
+        }
+    }
+}
+
+
+
+@mixin pm($breakpoint, $type, $prop) {
+    @for $i from 0 through 5 {
+        @include qm($breakpoint) {
+            .#{$type}-#{$i}-#{$breakpoint} {
+                #{$prop}: #{$i}rem !important;
+            }
+
+            .#{$type}x-#{$i}-#{$breakpoint} {
+                #{$prop}-left: #{$i}rem !important;
+                #{$prop}-right: #{$i}rem !important;
+            }
+
+            .#{$type}y-#{$i}-#{$breakpoint} {
+                #{$prop}-top: #{$i}rem !important;
+                #{$prop}-bottom: #{$i}rem !important;
+            }
+
+            .#{$type}l-#{$i}-#{$breakpoint} {
+                #{$prop}-left: #{$i}rem !important;
+            }
+
+            .#{$type}r-#{$i}-#{$breakpoint} {
+                #{$prop}-right: #{$i}rem !important;
+            }
+
+            .#{$type}t-#{$i}-#{$breakpoint} {
+                #{$prop}-top: #{$i}rem !important;
+            }
+
+            .#{$type}b-#{$i}-#{$breakpoint} {
+                #{$prop}-bottom: #{$i}rem !important;
+            }
+        }
+    }
+}

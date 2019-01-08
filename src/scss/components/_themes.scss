@@ -1,0 +1,28 @@
+@mixin themes($name, $color) {
+    .theme-#{$name} {
+        background-color: $color;
+
+        @if($name == white or $name == white-dark) {
+            color: $color-dark;
+        }
+
+        @else {
+            color: $color-white;
+        }
+
+        & * {
+            background-color: inherit;
+            color: inherit;
+        }
+    }
+}
+
+@include themes(prime, $color-prime);
+@include themes(sec, $color-sec);
+@include themes(ter, $color-ter);
+@include themes(warn, $color-warn);
+@include themes(danger, $color-danger);
+@include themes(dark, $color-dark);
+@include themes(black, $color-black);
+@include themes(white, $color-white);
+@include themes(white-dark, $color-white-dark);
