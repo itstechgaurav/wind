@@ -1,2 +1,1 @@
-tag manger
 password show icon
