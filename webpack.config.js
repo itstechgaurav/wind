@@ -1,8 +1,6 @@
 let path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
-const webpackDashboard = require("webpack-dashboard/plugin");
 const BrotliGzipPlugin = require('brotli-gzip-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
@@ -60,21 +58,30 @@ module.exports = (env, args) => {
                             name: "images/[name].[ext]"
                         }
                     }
-            }
+            }, 
+                {
+                    test: /\.(ttf|eot|woff|woff2|svg)$/,
+                    use: isDev ? "url-loader" : {
+                        loader: "file-loader",
+                        options: {
+                            name: "fonts/[name].[ext]"
+                        }
+                    }
+                }
         ]
         },
         plugins: [
-        new BrotliGzipPlugin({
-                asset: '[path].br[query]',
-                algorithm: 'brotli',
-                test: /\.(js|css|html|svg)$/,
-                threshold: 10240,
-                minRatio: 0.8,
-                quality: 11
-            }),
+//        new BrotliGzipPlugin({
+//                asset: '[path].br[query]',
+//                algorithm: 'brotli',
+//                test: /\.(js|css|html|svg|ttf|eot|woff|woff2)$/,
+//                threshold: 10240,
+//                minRatio: 0.8,
+//                quality: 11
+//            }),
             new CompressionPlugin({
                 algorithm: 'gzip',
-                test: /\.(js|css|html|svg)$/,
+                test: /\.(js|css|html|svg|ttf|eot|woff|woff2)$/,
                 threshold: 8192,
                 minRatio: 0.8
             }),
