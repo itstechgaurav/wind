@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-            <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js"></script>
 </head>
 
 <body class="p-4">
@@ -19,6 +20,14 @@
                 </div>
                 <div class="tabs-body">
                     <div class="tab-body">
+                        <div class="btn btn-prime ripple" data-target="mode">Open</div>
+                        <div id="mode" class="model">
+                            <div class="model-content">
+                                <div class="model-body">
+                                    Hallo
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <input type="text" class="input" placeholder="Tags" id="tag">
                         </div>
@@ -243,22 +252,22 @@
         </div>
     </div>
 
-    <script src="/js/main.js"></script>
+    <!--    <script src="https://asst.ml/js/main.js"></script>-->
     <script>
-        let abc = new Tag(document.getElementById("tag"), {
-            tags: [
-                {
-                    text: "Html"
-                },
-                {
-                    text: "Css"
-                }
-            ],
-            suggestion: [
-                "nirmla"
-            ]
+        loaded(function() {
+            let abc = new Tag(document.getElementById("tag"), {
+                tags: [{
+                        text: "Html"
+                    },
+                    {
+                        text: "Css"
+                    }
+                ],
+                suggestion: [
+                    "nirmla"
+                ]
+            });
         });
-
     </script>
 
 </body>

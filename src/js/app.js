@@ -29,6 +29,12 @@ window.spyder.rerun = function() {
     });
 }
 
+window.loaded = function(callback) {
+    document.addEventListener("DOMContentLoaded", function() {
+        callback();
+    });
+};
+
 //window.addAlert = function() {
 //    let alt = document.createElement("div");
 //    alt.classList.add("alert");
@@ -40,4 +46,6 @@ window.spyder.rerun = function() {
 //import "./components/tags";
 
 window.rerun = window.spyder.rerun;
-window.rerun();
+document.addEventListener("DOMContentLoaded", function() {
+    window.rerun();
+});

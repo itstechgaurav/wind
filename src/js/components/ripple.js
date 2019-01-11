@@ -37,7 +37,6 @@ function functionForRipples() {
                     it.removeChild(circle);
                 }, 2000)
             });
-            it.isDone = true;
         }
     })
 }
