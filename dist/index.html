@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-<!--    <link rel="stylesheet" href="/css/main.css">-->
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="/css/main.css">
     <script src="/js/main.js"></script>
 </head>
 
@@ -13,10 +14,10 @@
         <div class="alert-body">
             <div class="tabs-container">
                 <div class="tabs-head">
-                    <div class="tab-head ripple tab-active">HTML</div>
-                    <div class="tab-head ripple">SCSS</div>
-                    <div class="tab-head ripple">JavaScript</div>
-                    <div class="tab-head ripple">Result</div>
+                    <div class="tab-head tab-active">HTML</div>
+                    <div class="tab-head">SCSS</div>
+                    <div class="tab-head">JavaScript</div>
+                    <div class="tab-head">Result</div>
                 </div>
                 <div class="tabs-body">
                     <div class="tab-body">
@@ -58,10 +59,10 @@
         <div class="alert-body">
             <div class="tabs-container tabs-vertical">
                 <div class="tabs-head">
-                    <div class="tab-head ripple">HTML</div>
-                    <div class="tab-head ripple">SCSS</div>
-                    <div class="tab-head ripple">JavaScript</div>
-                    <div class="tab-head ripple">Result</div>
+                    <div class="tab-head">HTML</div>
+                    <div class="tab-head">SCSS</div>
+                    <div class="tab-head">JavaScript</div>
+                    <div class="tab-head">Result</div>
                 </div>
                 <div class="tabs-body">
                     <div class="tab-body">
@@ -122,10 +123,10 @@
                     </div>
                 </div>
                 <div class="tabs-head">
-                    <div class="tab-head ripple">HTML</div>
-                    <div class="tab-head ripple">SCSS</div>
-                    <div class="tab-head ripple">JavaScript</div>
-                    <div class="tab-head ripple">Result</div>
+                    <div class="tab-head">HTML</div>
+                    <div class="tab-head">SCSS</div>
+                    <div class="tab-head">JavaScript</div>
+                    <div class="tab-head">Result</div>
                 </div>
             </div>
         </div>
@@ -161,10 +162,10 @@
                     </div>
                 </div>
                 <div class="tabs-head">
-                    <div class="tab-head ripple tab-active">HTML</div>
-                    <div class="tab-head ripple">SCSS</div>
-                    <div class="tab-head ripple">JavaScript</div>
-                    <div class="tab-head ripple">Result</div>
+                    <div class="tab-head tab-active">HTML</div>
+                    <div class="tab-head">SCSS</div>
+                    <div class="tab-head">JavaScript</div>
+                    <div class="tab-head">Result</div>
                 </div>
 
             </div>
@@ -257,12 +258,13 @@
         loaded(function() {
             let abc = new Tag(document.getElementById("tag"), {
                 tags: [{
-                        text: "Html"
+                        text: "HTML"
                     },
                     {
                         text: "Css"
                     }
                 ],
+                trim: true,
                 suggestion: [
                     "nirmla"
                 ]

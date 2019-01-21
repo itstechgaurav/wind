@@ -22,8 +22,10 @@ module.exports = (env, args) => {
         },
         devServer: {
             contentBase: "dist",
-            bonjour: true
+            bonjour: true,
+            watchContentBase: true
         },
+        devtool: isDev ? 'source-map' : false,
         module: {
             rules: [
                 {
@@ -37,16 +39,25 @@ module.exports = (env, args) => {
                     test: /\.(scss|sass)/,
                     use: [
                         {
-                            loader: isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+                            loader: isDev ? MiniCssExtractPlugin.loader : MiniCssExtractPlugin.loader,
                     },
                         {
                             loader: "css-loader",
+                            options: {
+                                sourceMap: isDev
+                            }
                     },
                         {
                             loader: "postcss-loader",
+                            options: {
+                                sourceMap: isDev
+                            }
                     },
                         {
                             loader: "sass-loader",
+                            options: {
+                                sourceMap: isDev
+                            }
                     }
                 ]
             },
@@ -75,15 +86,15 @@ module.exports = (env, args) => {
 //                asset: '[path].br[query]',
 //                algorithm: 'brotli',
 //                test: /\.(js|css|html|svg|ttf|eot|woff|woff2)$/,
-//                threshold: 10240,
+////                threshold: 100,
 //                minRatio: 0.8,
 //                quality: 11
 //            }),
             new CompressionPlugin({
                 algorithm: 'gzip',
                 test: /\.(js|css|ttf|eot|woff|woff2|svg)$/,
-                threshold: 8192,
-                minRatio: 0.8
+                threshold: 100,
+                minRatio: 0.99
             }),
             new MiniCssExtractPlugin({
                 filename: output.css,

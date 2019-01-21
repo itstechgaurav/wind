@@ -18,14 +18,16 @@
         display: inline-block;
         padding: 1.5rem 1rem;
         cursor: pointer;
+        border-bottom: 2px solid transparent;
         
         &:hover {
-            background-color: rgba($color-white-dark, .4);
+            background-color: rgba($color-white-dark, .36);
         }
     }
     
     &-active {
-        background-color: rgba($color-white-dark, .4) !important;
+        background-color: rgba($color-white-dark, .7) !important;
+        border-bottom-color: $color-ter;
     }
     
     &-body {

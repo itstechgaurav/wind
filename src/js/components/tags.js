@@ -102,12 +102,10 @@ class Tag {
 
     showSuggestion(text, index) {
         if (this.suggestion && this.suggestion.length) {
-            text = text.trim();
             let list = this.suggestion;
             let find = false;
             list.forEach(function (it, i) {
                 if (!find) {
-                    it = it.trim();
                     if (it.length) {
                         if (it.substring(0, text.length) === text) {
                             find = true;
@@ -160,13 +158,17 @@ class Tag {
         }
 
         if (text.length < this.minLength) {
-            console.log("Text Length Should be greater then " + this.minLength - 1);
+            let msg = "Tag Length Should be greater then " + (this.minLength - 1);
+            console.log(msg);
+            alert(msg);
             return false;
         }
 
         if (text.length > this.maxLength) {
             if (this.maxLength !== 0) {
-                console.log("Text Length Should be Less then " + this.maxLength + 1);
+                let msg = "Text Length Should be Less then " + (this.maxLength + 1);
+                console.log(msg);
+                alert(msg);
                 return false;
             }
         }
@@ -191,8 +193,8 @@ class Tag {
         if(this.tagTheme) {
             it.classList.add("theme-" + this.tagTheme);
         }
-        let itText = createEl("DIV", ['badge-text']);
-        itText.textContent = op.text;
+        let itText = createEl("PRE", ['badge-text']);
+        itText.innerText = op.text;
 
         let itClose = createEl("SPAN", ['tag-item-close']);
         itClose.textContent = "X";

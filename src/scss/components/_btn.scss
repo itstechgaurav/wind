@@ -38,7 +38,7 @@
     outline: none;
     color: $color-white;
     border-radius: .3rem;
-    box-shadow: 0 .6rem 1rem rgba($color-black, .1);
+    box-shadow: 0 .6rem 1rem rgba($color-black, .01);
     transition: .2s;
     cursor: pointer;
     text-decoration: none;
@@ -70,7 +70,7 @@
     }
 
     &:active {
-        box-shadow: 0 .2rem 1rem rgba($color-black, .1);
+        box-shadow: 0 .2rem 1rem rgba($color-black, .01);
         transform: translateY(.2rem);
     }
 
